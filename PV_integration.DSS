@@ -1,0 +1,18 @@
+!PV definition
+// P-T curve is per unit of rated Pmpp vs temperature
+//This one is for a Pmpp stated at 25 deg
+
+New XYCurve.MyPvsT npts=4 xarray=[0 25 75 100]  yarray=[1.2 1.0 0.8 0.6]
+
+// efficiency curve is per unit eff vs per unit power
+New XYCurve.MyEff npts=4  xarray=[.1 .2 .4 1.0]  yarray=[.86  .9  .93   .97]
+
+
+//pv definition
+
+New PVSystem.PV3  phases=3 bus1=3  kv=0.415 kVA=200 irrad=0.8 Pmpp=200
+~ temperature=27  PF=1 effcurve=Myeff P-TCurve=MyPvsT
+
+New PVSystem.PV4  phases=3 bus1=4  kv=0.415 kVA=150 irrad=0.8 Pmpp=150
+~ temperature=27  PF=1 effcurve=Myeff P-TCurve=MyPvsT
+

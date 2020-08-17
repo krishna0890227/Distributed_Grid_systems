@@ -1,0 +1,32 @@
+
+Clear  ! This clear all previous ouput results. 
+
+New Circuit.IEEE_4 phase=3  BasekV=11 bus1=SourceBus  
+~ Angle=30    ! advance angle 30 deg to counter phase shift due to of Dy transformer phase shift
+~ MVASC3=2000000 MVASC1=21000 
+
+!SUB Transformer 1 Definition
+
+New Transformer.Sub1 Phases=3 Winding=2   XHL=(7.15  100 /)
+~ wdg=1 bus=SourceBus  conn=delta  kv=11  kva=2000 %r=(.5  10000 /) XHT=3.575
+~ wdg=2    bus=1       conn=wye  kv=0.415 kva=2000  %r=(.5  1000 /) XLT=3.575
+
+ ! Define the circuit elements
+
+Redirect Line.DSS
+Redirect Load.DSS
+Redirect PV_integration.DSS
+
+
+! Let the openDSS estimate the voltage bases
+
+Set Voltagebases=[11]  ! legal bases for this problem
+solve maxcontrol=100
+
+//--------------------------------
+// Calculation options
+
+set controlmode=static
+
+Calcvoltagebases
+!!!!!!!!!!!!!

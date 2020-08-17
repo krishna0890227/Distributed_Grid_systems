@@ -1,0 +1,5 @@
+! This file contains connetected Load system in OpenDSS
+
+New Load.2 Bus1=2 kW=247.43  kvar=185.57 kv=0.415 vminpu=0.85 vmaxpu=1.05
+New Load.3 Bus1=3 kW=726.66  kvar=0 kv=0.415 vminpu=0.85 vmaxpu=1.05
+New Load.4 Bus1=4 kW=367.662  kvar=212.276 kv=0.415 vminpu=0.85 vmaxpu=1.05
