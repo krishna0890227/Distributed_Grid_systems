@@ -1,2 +1,2 @@
 # Distributed_Grid_systems
-OpenDSS work in Matlab
+A simple tutorial of solar PV integration over distribution grid (DG) system. 
